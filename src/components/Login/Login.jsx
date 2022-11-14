@@ -65,12 +65,16 @@ const Login = (props) => {
     };
   }, []);
 
+  // Alias Assignment to optimise useEffect during validation
+  const { isValid: emailIsValid } = emailState;
+  const { isValid: passwordIsValid } = passwordState;
+
   // To execute useEffect when change occurs in functions in the dependency
   useEffect(() => {
     const identifier = setTimeout(() => {
       console.log('Checking form validty!');
       // Execute only ONCE after keylogging is completed
-      setFormIsValid(emailState.isValid && passwordState.isValid);
+      setFormIsValid(emailIsValid && passwordIsValid);
     }, 500);
     // Execute a cleanup function
     return () => {
@@ -79,7 +83,7 @@ const Login = (props) => {
       clearTimeout(identifier);
     };
     //add the function itself as a dependency to check, if either have changed (OR function) during its next render cycle
-  }, [emailState, passwordState]);
+  }, [emailIsValid, passwordIsValid]);
 
   const emailChangeHandler = (event) => {
     // setEnteredEmail(event.target.value);
