@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 
-import Card from './Card';
-import Button from './Button';
+import Card from './Card/Card';
+import Button from './Button/Button';
 import classes from './ErrorModal.module.css';
 
 // Creating a portal for Backdrop
