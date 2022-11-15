@@ -56,14 +56,14 @@ const Login = (props) => {
     isValid: null,
   });
 
-  // useEffect Executes continously without [] for every state update
-  // Executes ONLY once when initiated with []
-  useEffect(() => {
-    console.log('useEffect Running');
-    return () => {
-      console.log('useEffect Cleanup');
-    };
-  }, []);
+  // // useEffect Executes continously without [] for every state update
+  // // Executes ONLY once when initiated with []
+  // useEffect(() => {
+  //   console.log('useEffect Running');
+  //   return () => {
+  //     console.log('useEffect Cleanup');
+  //   };
+  // }, []);
 
   // Alias Assignment to optimise useEffect during validation
   const { isValid: emailIsValid } = emailState;
